@@ -1,6 +1,6 @@
 # Manivannan Kalyanasundaram — Personal Portfolio
 
-A personal portfolio covering a career in product design, UX, and strategy, alongside Research & Studies and Perspectives. Career roles and dates are sourced from the LinkedIn profile supplied by the owner: https://www.linkedin.com/in/get2knowmani/.
+A personal portfolio covering Career & Education, Research & Studies, and Perspectives. Career and education details are sourced from the LinkedIn profile supplied by the owner: https://www.linkedin.com/in/get2knowmani/.
 
 Live site: https://mani-ux.github.io/independent-research/
 
@@ -8,7 +8,13 @@ The repository name is retained for hosting continuity; it is not the public bra
 
 ## Edit career details
 
-Update `src/data/career.ts`. Each role has an organization, title, start and end dates, location, summary, and areas of work. Entries are displayed most recent first. Current responsibilities are omitted because no description was supplied in the source profile. Do not invent achievements or metrics.
+Update `src/data/career.ts` for roles and `src/data/education.ts` for education and certifications. Career entries are displayed most recent first. Current responsibilities are omitted because no description was supplied in the source profile. Do not invent achievements, qualifications, metrics, or missing dates.
+
+The Career & Education navigation link jumps to `#career-education`; a local education link jumps directly to `#education`.
+
+## Search visibility
+
+Every page uses a shared `noindex, nofollow` robots meta tag at the owner's request. Keep crawlers able to access pages so they can see this instruction. Search engines may take time to remove previously indexed URLs. This does not make the site or source repository private; visitors can still access them by URL. Future PDF downloads would require separate indexing controls.
 
 The homepage is `src/pages/index.astro`, the shared page shell is `src/layouts/Layout.astro`, and styling is `src/styles/global.css`.
 

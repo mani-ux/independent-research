@@ -4,7 +4,9 @@ This is Manivannan Kalyanasundaram's personal portfolio, currently showing only 
 
 Career data lives in `src/data/career.ts`. Roles and dates come from the LinkedIn profile supplied by the owner. Summaries condense professional role descriptions; never invent metrics, employers, responsibilities, or qualifications. Do not copy private LinkedIn analytics, messages, connection data, or account controls. Current role has no responsibility description in the source, so do not invent one.
 
-The public site has Career, Research & Studies, and Perspectives sections. It remains a personal portfolio. Research & Studies uses the `/research/` route and Perspectives uses `/perspectives/`. Do not add other sections without a user request.
+The public site has Career & Education, Research & Studies, and Perspectives sections. Education data lives in `src/data/education.ts`; use only sourced qualifications and dates. It remains a personal portfolio. Research & Studies uses the `/research/` route and Perspectives uses `/perspectives/`. Do not add other sections without a user request.
+
+The owner requested exclusion from search results. Keep the shared `noindex, nofollow` robots meta tag on every page, including future articles. Do not block crawling in robots.txt: search engines need to crawl pages to see noindex. This is not access control; the public site and repository remain accessible by URL. Do not add a sitemap or remove noindex without a user request.
 
 ## Content boundary
 

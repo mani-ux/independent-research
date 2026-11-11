@@ -1,16 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { career, profile } from '../data/career';
+import { education } from '../data/education';
 ---
 <Layout>
   <section class="intro" aria-labelledby="intro-title">
     <div class="intro-top"><p class="eyebrow">Product Design & Strategy Leader</p><span class="edition">A personal portfolio</span></div>
     <h1 id="intro-title">Manivannan<span class="surname">Kalyanasundaram<span class="accent">.</span></span></h1>
-    <div class="intro-bottom"><p>Making complex things<br /><em>feel human.</em></p><div class="intro-note"><p>From shaping experiences to leading<br class="desktop-break" /> teams, products, and systems.</p><a href="#career">Explore my career <span aria-hidden="true">↓</span></a></div></div>
+    <div class="intro-bottom"><p>Making complex things<br /><em>feel human.</em></p><div class="intro-note"><p>From shaping experiences to leading<br class="desktop-break" /> teams, products, and systems.</p><a href="#career-education">Explore my journey <span aria-hidden="true">↓</span></a></div></div>
   </section>
 
+  <div id="career-education">
   <section class="career" id="career" aria-labelledby="career-title">
-    <div class="career-intro"><div class="sticky-intro"><p class="eyebrow"><span class="section-number">01 /</span> Career journey</p><h2 id="career-title">The path<br /><em>so far.</em></h2><p class="career-context">Design craft. Systems thinking.<br />People and product leadership.</p><span class="year-span">2010 <span aria-hidden="true">⟶</span> Now</span></div></div>
+    <div class="career-intro"><div class="sticky-intro"><p class="eyebrow"><span class="section-number">01 /</span> Career & Education</p><h2 id="career-title">The path<br /><em>so far.</em></h2><p class="career-context">Design craft. Systems thinking.<br />People and product leadership.</p><span class="year-span">2010 <span aria-hidden="true">⟶</span> Now</span><a class="education-jump" href="#education">Education & learning <span aria-hidden="true">↓</span></a></div></div>
     <ol class="timeline" aria-label="Career history, most recent first">
       {career.map((entry, index) => <li class:list={['career-entry', {current:entry.current}]}>
         <div class="entry-meta"><span class="entry-index" aria-hidden="true">{String(career.length - index).padStart(2,'0')}</span><span class="entry-dates"><time datetime={entry.startDate}>{entry.start}</time><span aria-hidden="true"> — </span><span class="sr-only"> to </span>{entry.endDate ? <time datetime={entry.endDate}>{entry.end}</time> : <span>{entry.end}</span>}</span>{entry.current && <span class="current-label"><span aria-hidden="true"></span> Current</span>}</div>
@@ -18,4 +20,11 @@ import { career, profile } from '../data/career';
       </li>)}
     </ol>
   </section>
+  <section class="career education" id="education" aria-labelledby="education-title">
+    <div class="career-intro"><div class="sticky-intro"><p class="eyebrow"><span class="section-number">02 /</span> Education</p><h2 id="education-title">Education &<br /><em>learning.</em></h2><p class="career-context">Formal education and<br />professional development.</p></div></div>
+    <ol class="timeline education-timeline" aria-label="Education and professional certifications">
+      {education.map((entry,index)=><li class="career-entry education-entry"><div class="entry-meta"><span class="entry-index" aria-hidden="true">{String(index+1).padStart(2,'0')}</span><span class="entry-dates">{entry.startDate && <><time datetime={entry.startDate}>{entry.start}</time><span> — </span></>}{entry.endDate ? <time datetime={entry.endDate}>{entry.end}</time> : <span>{entry.kind}</span>}</span></div><div class="entry-content"><h3>{entry.institution}</h3><p class="entry-role">{entry.program}</p>{entry.endDate && <p class="organization">{entry.kind}</p>}</div></li>)}
+    </ol>
+  </section>
+  </div>
 </Layout>
