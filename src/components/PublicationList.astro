@@ -1,7 +1,0 @@
----
-import { getCollection } from 'astro:content';
-const { section } = Astro.props;
-const entries = (await getCollection('publications', ({ data }) => data.published && (!section || data.section === section))).sort((a,b) => b.data.date.valueOf() - a.data.date.valueOf());
-const base = import.meta.env.BASE_URL.replace(/\/$/, '');
----
-{entries.length ? <div class="publications">{entries.map(entry => <article class="publication"><p class="eyebrow">{entry.data.section} · <time datetime={entry.data.date.toISOString()}>{entry.data.date.toLocaleDateString('en-GB', {year:'numeric', month:'long', day:'numeric', timeZone:'UTC'})}</time></p><h2><a href={`${base}/${entry.data.section}/${entry.id}/`}>{entry.data.title}</a></h2><p>{entry.data.description}</p></article>)}</div> : <div class="empty"><p class="eyebrow">A publication in formation</p><h2>Good questions take time.</h2><p>{section === 'research' ? 'Research papers will appear here when ready for publication.' : section === 'writing' ? 'Essays and editorial notes will appear here when ready for publication.' : 'Research papers and essays will appear here as they are published.'}</p></div>}

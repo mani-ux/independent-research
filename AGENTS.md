@@ -1,6 +1,10 @@
-# Independent Research
+# Manivannan Kalyanasundaram — Personal Portfolio
 
-This is a public Astro + MDX publication. Keep the editorial design calm: warm paper, charcoal text, serif headings, readable line lengths, and restrained olive accents. Preserve keyboard navigation and the `/independent-research` base path.
+This is Manivannan Kalyanasundaram's personal portfolio, currently showing only his career flow. It is not an independent research organization. Keep the design personal and editorial: warm paper, charcoal typography, serif accents, restrained burnt orange, and a vertical career timeline. Preserve keyboard navigation, mobile readability, and the `/independent-research` base path (the repository name is a hosting path, not the site's brand).
+
+Career data lives in `src/data/career.ts`. Roles and dates come from the LinkedIn profile supplied by the owner. Summaries condense professional role descriptions; never invent metrics, employers, responsibilities, or qualifications. Do not copy private LinkedIn analytics, messages, connection data, or account controls. Current role has no responsibility description in the source, so do not invent one.
+
+The current public site has one page. Do not add publication sections, case studies, education, services, or other content without a user request. Astro + MDX support and the publishing skills are retained for future use.
 
 ## Content boundary
 

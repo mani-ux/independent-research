@@ -1,8 +1,0 @@
----
-import Layout from '../../layouts/Layout.astro';
-import PublicationList from '../../components/PublicationList.astro';
-export function getStaticPaths() { return ['research', 'writing'].map(section => ({ params: { section } })); }
-const { section } = Astro.params;
-const title = section === 'research' ? 'Research' : 'Writing';
----
-<Layout title={title}><section class="page-heading"><p class="eyebrow">The publication</p><h1>{title}</h1><p class="intro">{section === 'research' ? 'Sustained inquiry, evidence, and new perspectives.' : 'Essays and reflections on ideas in practice.'}</p></section><PublicationList section={section} /></Layout>
