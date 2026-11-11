@@ -1,0 +1,9 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PublicationList from '../../components/PublicationList.astro';
+export function getStaticPaths(){return ['research','perspectives'].map(section=>({params:{section}}));}
+const { section }=Astro.params;
+const title=section === 'research' ? 'Research & Studies' : 'Perspectives';
+const description=section === 'research' ? 'Independent inquiries, frameworks, and deeper explorations into design and organizations.' : 'Essays, observations, and points of view on design, leadership, and the way we work.';
+---
+<Layout title={title} description={description}><section class="publication-heading"><p class="eyebrow">{section === 'research' ? 'Inquiry & exploration' : 'Thoughts & observations'}</p><h1>{title}<span class="accent">.</span></h1><p>{description}</p></section><PublicationList section={section} /></Layout>

@@ -18,7 +18,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <a class="skip" href="#main">Skip to content</a>
     <header class="site-header shell">
       <a class="wordmark" href={`${base}/`} aria-label={`${profile.name}, home`}><span class="monogram" aria-hidden="true">mk<span>·</span></span><span class="wordmark-name">Manivannan<br />Kalyanasundaram</span></a>
-      <nav aria-label="Main navigation"><a class="nav-career" href={`${base}/#career`}>Career</a><a href={profile.linkedin}>LinkedIn <span aria-hidden="true">↗</span></a></nav>
+      <nav aria-label="Main navigation"><a class="nav-career" href={`${base}/#career`}>Career</a><a href={`${base}/research/`} aria-current={Astro.url.pathname.includes('/research/') ? 'page' : undefined}>Research & Studies</a><a href={`${base}/perspectives/`} aria-current={Astro.url.pathname.includes('/perspectives/') ? 'page' : undefined}>Perspectives</a><a href={profile.linkedin}>LinkedIn <span aria-hidden="true">↗</span></a></nav>
     </header>
     <main id="main" class="shell"><slot /></main>
     <footer class="site-footer shell"><span>Manivannan Kalyanasundaram</span><a href={profile.linkedin}>Find me on LinkedIn <span aria-hidden="true">↗</span></a><a class="back-top" href="#main">Back to top <span aria-hidden="true">↑</span></a></footer>

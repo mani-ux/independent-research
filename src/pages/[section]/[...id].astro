@@ -1,0 +1,10 @@
+---
+import {getCollection,render} from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+export async function getStaticPaths(){return (await getCollection('publications',({data})=>data.published)).map(entry=>({params:{section:entry.data.section,id:entry.id},props:{entry}}));}
+const {entry}=Astro.props;
+const {Content,headings}=await render(entry);
+const base=import.meta.env.BASE_URL.replace(/\/$/,'');
+const label=entry.data.section==='research'?'Research & Studies':'Perspectives';
+---
+<Layout title={entry.data.title} description={entry.data.description}><article class="publication-article"><header class="article-heading"><a class="article-back" href={`${base}/${entry.data.section}/`}>← {label}</a><h1>{entry.data.title}</h1><p class="article-deck">{entry.data.description}</p><p class="article-byline">{entry.data.author}<span aria-hidden="true"> · </span><time datetime={entry.data.date.toISOString()}>{entry.data.date.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'})}</time></p></header><div class="article-grid">{headings.filter(h=>h.depth===2).length>0 && <aside class="article-toc" aria-label="On this page"><p class="eyebrow">On this page</p><ol>{headings.filter(h=>h.depth===2).map(h=><li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ol></aside>}<div class="article-prose"><Content /></div></div></article></Layout>

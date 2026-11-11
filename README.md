@@ -1,6 +1,6 @@
 # Manivannan Kalyanasundaram — Personal Portfolio
 
-A personal portfolio focused on career progression in product design, UX, and strategy. The public site currently contains only the career journey, with roles and dates sourced from the LinkedIn profile supplied by the owner: https://www.linkedin.com/in/get2knowmani/.
+A personal portfolio covering a career in product design, UX, and strategy, alongside Research & Studies and Perspectives. Career roles and dates are sourced from the LinkedIn profile supplied by the owner: https://www.linkedin.com/in/get2knowmani/.
 
 Live site: https://mani-ux.github.io/independent-research/
 
@@ -29,9 +29,24 @@ GitHub Pages uses the **GitHub Actions** source. Changes pushed to `main` build 
 
 Internal links must account for `/independent-research/`. The site has no database, runtime secrets, analytics, external fonts, or paid hosting dependencies.
 
-## Future research and writing
+## Research & Studies and Perspectives
 
-Astro + MDX support and the four project skills in `.github/skills/` are retained for later use. Research is one possible part of this personal space; it is not the site's identity. There are currently no Research, Writing, or About routes or navigation items.
+Research & Studies (`/research/`) holds independent inquiries, frameworks, and studies. Perspectives (`/perspectives/`) holds essays, observations, and thought leadership. Research is part of this personal space; it is not the site's identity.
+
+Only after text is approved for public release, add an `.mdx` file in `src/content/publications/` with metadata:
+
+```yaml
+---
+title: "Approved article title"
+description: "An accurate summary"
+section: perspectives
+date: 2026-11-12
+author: "Manivannan Kalyanasundaram"
+published: true
+---
+```
+
+Use `section: research` for Research & Studies. Replace example metadata with the actual title, summary, and publication date. The filename determines the article URL. Level-two headings create the article's contents list. Missing `published` defaults to false; unpublished articles have no routes or listing links. This flag is an editorial safeguard, not privacy protection for files in a public repository. Reusable instructions are in `.github/skills/`.
 
 Keep unpublished manuscripts and confidential information outside this public repository. A `published: false` flag cannot make committed source private. Files in `public/` are copied to the website, and Git history can retain removed files.
 

@@ -5,7 +5,7 @@ const publications = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    section: z.enum(['research', 'writing']),
+    section: z.enum(['research', 'perspectives']),
     published: z.boolean().default(false),
     date: z.coerce.date(),
     author: z.string(),

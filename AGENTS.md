@@ -4,7 +4,7 @@ This is Manivannan Kalyanasundaram's personal portfolio, currently showing only 
 
 Career data lives in `src/data/career.ts`. Roles and dates come from the LinkedIn profile supplied by the owner. Summaries condense professional role descriptions; never invent metrics, employers, responsibilities, or qualifications. Do not copy private LinkedIn analytics, messages, connection data, or account controls. Current role has no responsibility description in the source, so do not invent one.
 
-The current public site has one page. Do not add publication sections, case studies, education, services, or other content without a user request. Astro + MDX support and the publishing skills are retained for future use.
+The public site has Career, Research & Studies, and Perspectives sections. It remains a personal portfolio. Research & Studies uses the `/research/` route and Perspectives uses `/perspectives/`. Do not add other sections without a user request.
 
 ## Content boundary
 
@@ -14,7 +14,7 @@ Never invent research findings, author credentials, quotations, citations, or pu
 
 ## Working conventions
 
-- Publish approved MDX in `src/content/publications/` with title, description, section (`research` or `writing`), date, author, and `published` metadata.
+- Publish approved MDX in `src/content/publications/` with title, description, section (`research` or `perspectives`), date, author, and `published` metadata. Research & Studies is for inquiries and studies; Perspectives is for essays and thought leadership. Do not represent a conceptual essay as validated research.
 - `published` defaults to false. All public lists and routes must filter it. This is an editorial safeguard, not access control.
 - Reusable skills are in `.github/skills/`. Consult the relevant skill for research review, writing, publication, or visual changes.
 - Run `npm ci` after dependency changes and `npm run build` before delivery. Commit the lockfile. Check links under the repository base path.
